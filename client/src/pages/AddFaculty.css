@@ -1,0 +1,30 @@
+.input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.label {
+    font-weight: 600;
+    margin: 8px 0;
+    display: block;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: #0f2740;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+
+.error-text {
+    color: #c62828;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
