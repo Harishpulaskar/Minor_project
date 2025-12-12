@@ -1,34 +1,17 @@
-.glass-card {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-}
-
-.page-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #0f2740;
-}
-
-.table {
+table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
 }
 
-.table th {
-    background: #0f2740;
+th {
+    background: #0f172a;
     color: white;
-    padding: 12px;
-    text-align: left;
+    padding: 10px;
 }
 
-.table td {
-    padding: 12px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.table tr:hover {
-    background: rgba(0, 0, 0, 0.05);
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }

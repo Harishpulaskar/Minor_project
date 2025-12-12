@@ -12,9 +12,6 @@ import PGStudentLogin from "./pages/PGStudentLogin";
 /* Dashboards */
 import AdminDashboard from "./pages/AdminDashboard";
 
-/* Protected Route Auth */
-import ProtectedRoute from "./auth/ProtectedRoute";
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -29,15 +26,8 @@ export default function App() {
         <Route path="/faculty-login" element={<FacultyLogin />} />
         <Route path="/pg-login" element={<PGStudentLogin />} />
 
-        {/* Admin Dashboard (only if logged in as admin) */}
-        <Route
-          path="/admin-dashboard/*"
-          element={
-            <ProtectedRoute role="admin">
-              <AdminDashboard />
-            </ProtectedRoute>
-          }
-        />
+        {/* Admin Dashboard (Uses internal routing) */}
+        <Route path="/admin-dashboard/*" element={<AdminDashboard />} />
 
       </Routes>
     </BrowserRouter>

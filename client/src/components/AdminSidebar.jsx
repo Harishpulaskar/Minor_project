@@ -1,25 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../pages/AdminDashboard.css";
+import "./Sidebar.css";
 
 export default function AdminSidebar() {
     return (
         <div className="sidebar">
-            <h2 className="logo">PG Assessment Tool</h2>
+            <h2>Admin Panel</h2>
 
-            <ul className="menu">
-                <li>
-                    <NavLink to="/admin-dashboard/faculty-list" className="menu-item">
-                        Faculty List
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink to="/admin-dashboard/add-faculty" className="menu-item">
-                        Add Faculty
-                    </NavLink>
-                </li>
-            </ul>
+            <NavLink to="/admin-dashboard/faculty-list">Faculty List</NavLink>
+            <NavLink to="/admin-dashboard/add-faculty">Add Faculty</NavLink>
         </div>
     );
 }

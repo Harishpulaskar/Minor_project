@@ -1,38 +1,39 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import "./Login.css";
+import { Link } from "react-router-dom";
 
 export default function AdminLogin() {
-    const navigate = useNavigate();
-    const [form, setForm] = useState({ username: "", password: "" });
-    const [error, setError] = useState("");
-
-    const submit = async () => {
-        if (!form.username || !form.password) return setError("All fields required");
-
-        const res = await fetch("/api/admin/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(form),
-        });
-
-        const data = await res.json();
-        if (!res.ok) return setError(data.message);
-
-        localStorage.setItem("adminToken", data.token);
-        navigate("/admin-dashboard");
-    };
+    const [details, setDetails] = useState({ email: "", password: "" });
 
     return (
-        <div className="login-container">
-            <h2>Admin Login</h2>
-            {error && <p className="error">{error}</p>}
+        <div className="bg-glass">
+            <div className="bg-content">
 
-            <input placeholder="Username"
-                onChange={(e) => setForm({ ...form, username: e.target.value })} />
-            <input type="password" placeholder="Password"
-                onChange={(e) => setForm({ ...form, password: e.target.value })} />
+                <div className="login-card">
+                    <h1 className="login-title">Admin Login</h1>
+                    <p className="login-subtitle">PG Intern Management System</p>
 
-            <button onClick={submit}>Login</button>
+                    <input
+                        type="email"
+                        placeholder="Admin Email"
+                        onChange={(e) => setDetails({ ...details, email: e.target.value })}
+                    />
+
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        onChange={(e) => setDetails({ ...details, password: e.target.value })}
+                    />
+
+                    <button className="login-btn">Login</button>
+
+                    <div className="login-links">
+                        <Link to="/faculty-login">Faculty Login</Link>
+                        <Link to="/pg-login">Intern Login</Link>
+                    </div>
+                </div>
+
+            </div>
         </div>
     );
 }
